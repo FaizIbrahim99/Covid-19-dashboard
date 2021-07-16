@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Style the tab */
+      button {
+        background-color: #e7e7e7; 
+        border: none;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+    </style>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/996973c893.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Tab Script -->
+    <script>
+      function openChart(chartName) {
+        var i;
+        var x = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none"; 
+        }
+        document.getElementById(chartName).style.display = "block"; 
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- My Stylesheet -->
+    <link rel="stylesheet" href="Polar Area Chart/style.css" />
+
+    <!-- My jQuery -->
+    <script src="Polar Area Chart/main.js"></script>
+    <script src="PIE/main.js"></script>
+    <script src="LINE/main.js"></script>
+    <script src="BUBBLE/main.js"></script>
+    <script src="BAR/main.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    <title>Covid-19 Dasboard by FlyOn</title>
+  </head>
+  <body>
+    <div class="container-fluid bg-light p-5 text-center my-3">
+      <h1 class="">
+        INDIA: WHO Coronavirus Disease (COVID-19) Dashboard by FlyOn
+      </h1>
+      <h5 class="text-muted">
+        TEB3133:Data Visualization - May 2021 project to keep track of all the
+        COVID-19 cases around the India.
+      </h5>
+    </div>
+
+    <div class="container my-5">
+      <div class="row text-center">
+        <div class="col-3 text-warning">
+          <h5>Confirmed</h5>
+          <p id="confirmed"></p>
+        </div>
+        <div class="col-3 text-info">
+          <h5>Active</h5>
+          <p id="active"></p>
+        </div>
+        <div class="col-3 text-success">
+          <h5>Recovered</h5>
+          <p id="recovered"></p>
+        </div>
+        <div class="col-3 text-danger">
+          <h5>Deceased</h5>
+          <p id="deaths"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container bg-light p-3 my-5 text-center">
+      <h5 class="text-info">"Prevention is the Cure."</h5>
+      <p class="text-muted">Stay Indoors Stay Safe.</p>
+    </div>
+
+    <!-- Tab Buttons -->
+    <div class="container-fluid text-center mb-3">
+      <button onclick="openChart('PieChart')">Pie Chart</button>
+      <button onclick="openChart('PolarAreaChart')">Polar Area Chart</button>
+      <button onclick="openChart('LineChart')">Line Chart</button>
+      <button onclick="openChart('BubbleChart')">Bubble Chart</button>
+      <button onclick="openChart('BarChart')">Bar Chart</button>
+    </div>
+    
+    <!-- Tab content -->
+    <div id="PieChart" class="tabcontent">
+      <canvas id="myChart1"></canvas>
+    </div>
+    
+    <div id="PolarAreaChart" class="tabcontent">
+      <canvas id="myChart"></canvas>
+    </div>
+    
+    <div id="LineChart" class="tabcontent">
+      <canvas id="myChart2"></canvas>
+    </div>
+
+    <div id="BubbleChart" class="tabcontent">
+      <canvas id="myChart3"></canvas>
+    </div>
+
+    <div id="BarChart" class="tabcontent">
+      <canvas id="myChart4"></canvas>
+    </div>
+
+    <div class="container text-center my-5">
+      <h6 class="text-info">
+        *Click on the Confirmed/Recovered/Deaths buttons above to see the chart
+        individually.*
+      </h6>
+    </div>
+
+    <footer class="footer mt-5 py-3 bg-light">
+      <div class="container text-center">
+        <span class="text-muted"
+          >Copyright &copy;MAY 2021 FlyOn Data Visualization TEB3133,
+          <a href="https://www.utp.edu.my/Pages/Home.aspx" target="_blank"
+            >Universiti Teknologi PETRONAS</a
+          ></span
+        >
+      </div>
+    </footer>
+  </body>
+</html>
