@@ -34,13 +34,13 @@ $(document).ready(function() {
         deaths.shift();
 
         // console.log(confirmed);
-        $("#confirmed").append(total_confirmed);
-        $("#active").append(total_active);
-        $("#recovered").append(total_recovered);
-        $("#deaths").append(total_deaths);
+        // $("#confirmed").append(total_confirmed);
+        // $("#active").append(total_active);
+        // $("#recovered").append(total_recovered);
+        // $("#deaths").append(total_deaths);
 
         // Chart initialization
-        var myChart = document.getElementById("myChart").getContext("2d");
+        var myChart = document.getElementById("myChart1").getContext("2d");
         var chart = new Chart(myChart, {
             type: "pie",
             data: {

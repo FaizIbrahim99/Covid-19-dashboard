@@ -33,20 +33,24 @@ $(document).ready(function() {
         deaths.shift();
 
         // console.log(confirmed);
-        $("#confirmed").append(total_confirmed);
-        $("#active").append(total_active);
-        $("#recovered").append(total_recovered);
-        $("#deaths").append(total_deaths);
+        // $("#confirmed").append(total_confirmed);
+        // $("#active").append(total_active);
+        // $("#recovered").append(total_recovered);
+        // $("#deaths").append(total_deaths);
 
         // Chart initialization
-        var myChart = document.getElementById("myChart").getContext("2d");
+        var myChart = document.getElementById("myChart3").getContext("2d");
         var chart = new Chart(myChart, {
             type: "bubble",
             data: {
                 labels: states,
                 datasets: [{
                         label: "Confirmed Cases",
-                        data: confirmed,
+                        data: [{
+                            x: 30, // X axis data
+                            y: 9.4, // y axis data
+                            r: 20 // radius size
+                          }],
                         backgroundColor: "#f1c40f",
 
                     },
