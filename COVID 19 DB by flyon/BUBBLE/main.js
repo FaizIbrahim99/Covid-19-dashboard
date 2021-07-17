@@ -32,11 +32,15 @@ $(document).ready(function() {
         recovered.shift();
         deaths.shift();
 
-        // console.log(confirmed);
-        // $("#confirmed").append(total_confirmed);
-        // $("#active").append(total_active);
-        // $("#recovered").append(total_recovered);
-        // $("#deaths").append(total_deaths);
+        //loop through the data and push into dataChart
+        var dataChart = [];
+        confirmed.forEach(function (data, i) {
+            dataChart.push({
+            x: parseFloat(data),
+            y: parseFloat(deaths[i]),
+            r: 10,
+          });
+        });
 
         // Chart initialization
         var myChart = document.getElementById("myChart3").getContext("2d");
@@ -45,14 +49,9 @@ $(document).ready(function() {
             data: {
                 labels: states,
                 datasets: [{
-                        label: "Confirmed Cases",
-                        data: [{
-                            x: 30, // X axis data
-                            y: 9.4, // y axis data
-                            r: 20 // radius size
-                          }],
+                        label: "Confirmed Cases/Deaths",
+                        data: dataChart,
                         backgroundColor: "#f1c40f",
-
                     },
 
 

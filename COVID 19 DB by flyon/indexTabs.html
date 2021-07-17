@@ -15,6 +15,28 @@
         display: inline-block;
         font-size: 16px;
       }
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
+      #PolarAreaChart{
+        display:none;
+      }
+      #LineChart{
+        display:none;
+      }
+      #PieChart{
+        display:none;
+      }
+      #BubbleChart{
+        display:none;
+      }
+      #BarChart{
+        display:none;
+      }
     </style>
 
     <!-- Bootstrap CSS -->
@@ -114,6 +136,10 @@
     </div>
     
     <!-- Tab content -->
+    <div id="PieChart">
+      Kindly click
+    </div>
+
     <div id="PieChart" class="tabcontent">
       <canvas id="myChart1"></canvas>
     </div>
@@ -133,6 +159,8 @@
     <div id="BarChart" class="tabcontent">
       <canvas id="myChart4"></canvas>
     </div>
+
+
 
     <div class="container text-center my-5">
       <h6 class="text-info">
